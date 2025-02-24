@@ -17,7 +17,7 @@
 #define RG_SCREEN_BACKLIGHT         1
 #define RG_SCREEN_WIDTH             320
 #define RG_SCREEN_HEIGHT            240
-#define RG_SCREEN_ROTATE            180
+#define RG_SCREEN_ROTATE            180 // has no effect .... use ILI9341_CMD(0x36 ...
 #define RG_SCREEN_MARGIN_TOP        0
 #define RG_SCREEN_MARGIN_BOTTOM     0
 #define RG_SCREEN_MARGIN_LEFT       0
