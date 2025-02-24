@@ -29,13 +29,13 @@
     ILI9341_CMD(0xCB, 0x39, 0x2c, 0x00, 0x34, 0x02);                                                             \
     ILI9341_CMD(0xF7, 0x20);                                                                                     \
     ILI9341_CMD(0xEA, 0x00, 0x00);                                                                               \
-    ILI9341_CMD(0xC0, 0x1B);                 /* Power control   //VRH[5:0] */                                    \
-    ILI9341_CMD(0xC1, 0x12);                 /* Power control   //SAP[2:0];BT[3:0] */                            \
-    ILI9341_CMD(0xC5, 0x32, 0x3C);           /* VCM control */                                                   \
-    ILI9341_CMD(0xC7, 0x91);                 /* VCM control2 */                                                  \
-    ILI9341_CMD(0x36, (0x60|0x08));          /* Memory Access Control  (0x20|0x80|0x08) */                       \
-    ILI9341_CMD(0xB1, 0x00, 0x10);           /* Frame Rate Control (1B=70, 1F=61, 10=119) */                     \
-    ILI9341_CMD(0xB6, 0x0A, 0xA2);           /* Display Function Control */                                      \
+    ILI9341_CMD(0xC0, 0x1B);                    /* Power control   //VRH[5:0] */                                    \
+    ILI9341_CMD(0xC1, 0x12);                    /* Power control   //SAP[2:0];BT[3:0] */                            \
+    ILI9341_CMD(0xC5, 0x32, 0x3C);              /* VCM control */                                                   \
+    ILI9341_CMD(0xC7, 0x91);                    /* VCM control2 */                                                  \
+    ILI9341_CMD(0x36, (0x20 | 0x80 | 0x08));    /* Memory Access Control  (0x20|0x80|0x08) */                       \
+    ILI9341_CMD(0xB1, 0x00, 0x10);              /* Frame Rate Control (1B=70, 1F=61, 10=119) */                     \
+    ILI9341_CMD(0xB6, 0x0A, 0xA2);              /* Display Function Control */                                      \
     ILI9341_CMD(0xF6, 0x01, 0x30);                                                                               \
     ILI9341_CMD(0xF2, 0x00); /* 3Gamma Function Disable */                                                       \
     ILI9341_CMD(0x26, 0x01); /* Gamma curve selected */                                                          \
@@ -44,6 +44,18 @@
 
 // Input
 // Refer to rg_input.h to see all available RG_KEY_* and RG_GAMEPAD_*_MAP types
+
+#define RG_GAMEPAD_GPIO_MAP {\
+    {RG_KEY_UP,     GPIO_NUM_41, GPIO_PULLUP_ONLY, 0},\
+    {RG_KEY_DOWN,   GPIO_NUM_42, GPIO_PULLUP_ONLY, 0},\
+    {RG_KEY_LEFT,   GPIO_NUM_43, GPIO_PULLUP_ONLY, 0},\
+    {RG_KEY_RIGHT,  GPIO_NUM_44, GPIO_PULLUP_ONLY, 0},\
+    {RG_KEY_SELECT, GPIO_NUM_45, GPIO_PULLUP_ONLY, 0},\
+    {RG_KEY_START,  GPIO_NUM_46, GPIO_PULLUP_ONLY, 0},\
+    {RG_KEY_A,      GPIO_NUM_16, GPIO_PULLUP_ONLY, 0},\
+    {RG_KEY_B,      GPIO_NUM_15, GPIO_PULLUP_ONLY, 0},\
+}
+
 
 // Battery
 #define RG_BATTERY_DRIVER           0
